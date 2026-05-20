@@ -1,0 +1,15 @@
+$ curl -i http://localhost:8080/
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Security-Policy: default-src 'self'
+X-Frame-Options: SAMEORIGIN
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Referrer-Policy: strict-origin-when-cross-origin
+Content-Length: 46
+
+{
+  "name": "Account REST API Service",
+  "version": "1.0"
+}

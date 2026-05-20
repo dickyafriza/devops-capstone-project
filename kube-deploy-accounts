@@ -1,0 +1,31 @@
+$ kubectl describe deployment accounts
+
+Name:                   accounts
+Namespace:              default
+CreationTimestamp:      Wed, 20 May 2026 18:00:00 +0700
+Labels:                 app=accounts
+Selector:               app=accounts
+Replicas:               2 desired | 2 updated | 2 total | 2 available | 0 unavailable
+StrategyType:           RollingUpdate
+RollingUpdateStrategy:  25% max unavailable, 25% max surge
+Pod Template:
+  Labels:  app=accounts
+  Containers:
+   accounts:
+    Image:        k3d-registry.localhost:5000/accounts:latest
+    Port:         8080/TCP
+    Host Port:    0/TCP
+    Environment:  <none>
+    Mounts:       <none>
+  Volumes:        <none>
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Available      True    MinimumReplicasAvailable
+  Progressing    True    NewReplicaSetAvailable
+OldReplicaSets:  <none>
+NewReplicaSet:   accounts-7bfbc7f748 (2/2 replicas created)
+Events:
+  Type    Reason             Age    From                   Message
+  ----    ------             ----   ----                   -------
+  Normal  ScalingReplicaSet  5m20s  deployment-controller  Scaled up replica set accounts-7bfbc7f748 to 2

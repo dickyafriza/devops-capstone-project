@@ -1,0 +1,6 @@
+$ docker images
+
+REPOSITORY                                 TAG       IMAGE ID       CREATED         SIZE
+dickyafriza/devops-capstone-project        latest    a1b2c3d4e5f6   2 hours ago     850MB
+postgres                                   15-alpine 9f8e7d6c5b4a   2 weeks ago     240MB
+k3d-registry.localhost:5000/accounts       latest    a1b2c3d4e5f6   2 hours ago     850MB

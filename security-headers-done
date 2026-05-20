@@ -1,15 +1,35 @@
-$ curl -i http://localhost:8080/
+nosetests --with-spec --spec-color
 
-HTTP/1.1 200 OK
-Content-Type: application/json
-Content-Security-Policy: default-src 'self'
-X-Frame-Options: SAMEORIGIN
-X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
-Referrer-Policy: strict-origin-when-cross-origin
-Content-Length: 46
+Account Service Tests
+- It should get 200_OK from the Home Page
+- It should be healthy
+- It should Create a new Account
+- It should Read an Account
+- It should List all Accounts
+- It should Update an Account
+- It should Delete an Account
+- It should not Create an Account when sending the wrong data
+- It should not Create an Account when sending the wrong media type
+- It should return a CORS header
+- It should return security headers
 
-{
-  "name": "Account REST API Service",
-  "version": "1.0"
-}
+Test Cases for Account Model
+- It should Create an Account and assert that it exists
+- It should Create an account and add it to the database
+- It should Read an account
+- It should Update an account
+- It should Delete an account from the database
+- It should List all Accounts in the database
+- It should Find an Account by name
+- It should Serialize an account
+- It should Deserialize an account
+- It should not Deserialize an account with a KeyError
+- It should not Deserialize an account with a TypeError
+
+Test Flask CLI Commands
+- It should call the db-create command
+
+----------------------------------------------------------------------
+Ran 25 tests in 1.452s
+
+OK
